@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Feliz San Valentín 💜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =================== RAMO INICIAL =================== */
+#flowerIntro{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at top,#4b1178,#1b0428);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  animation:fadeOut 2s ease forwards;
+  animation-delay:6s;
+}
+
+#flowerIntro h1{
+  font-family:'Great Vibes',cursive;
+  font-size:4.5rem;
+  color:#f5d9ff;
+  margin-bottom:40px;
+  text-shadow:0 0 30px #c77dff;
+}
+
+/* 💐 CONTENEDOR DEL RAMO */
+.bouquet{
+  position:relative;
+  width:360px;
+  height:320px;
+}
+
+/* 🌸 FLOR */
+.flower{
+  position:absolute;
+  bottom:0;
+  width:120px;
+  height:120px;
+  transform-origin:50% 100%;
+  animation:bloom 3s infinite ease-in-out;
+}
+
+/* 🌿 TALLO */
+.flower::before{
+  content:"";
+  position:absolute;
+  width:6px;
+  height:150px;
+  background:linear-gradient(#2e8b57,#145a32);
+  left:57px;
+  top:90px;
+  border-radius:4px;
+}
+
+/* 🌼 CENTRO CORREGIDO Y CÍRCULO AMARILLO */
+.flower::after{
+  content:"";
+  position:absolute;
+  width:20px;  /* tamaño pequeño y visible */
+  height:20px;
+  background:radial-gradient(circle,#fff3b0,#d4a017);
+  border-radius:50%;
+  top:90px;    /* centrado dentro de la flor */
+  left:50px;   /* centrdo dentro de la flor */
+  box-shadow:0 0 10px rgba(255,215,0,.9);
+}
+
+/* 🌸 PÉTALOS */
+.flower span{
+  position:absolute;
+  width:60px;
+  height:85px;
+  border-radius:50% 50% 0 0;
+  top:18px;
+  left:30px;
+  transform-origin:50% 100%;
+  filter:drop-shadow(0 0 10px rgba(200,120,255,.7));
+}
+
+.flower span:nth-child(1){transform:rotate(0deg);}
+.flower span:nth-child(2){transform:rotate(60deg);}
+.flower span:nth-child(3){transform:rotate(120deg);}
+.flower span:nth-child(4){transform:rotate(180deg);}
+.flower span:nth-child(5){transform:rotate(240deg);}
+.flower span:nth-child(6){transform:rotate(300deg);}
+
+/* 🌈 COLORES */
+.purple span{background:linear-gradient(#f6d8ff,#7a1fa2);}
+.lilac span{background:linear-gradient(#f9ecff,#b266ff);}
+.pink span{background:linear-gradient(#ffe0ee,#ff66b2);}
+.white span{background:linear-gradient(#ffffff,#e6ccff);}
+.magenta span{background:linear-gradient(#ffd1ff,#cc33ff);}
+.violet span{background:linear-gradient(#eddcff,#9933ff);}
+
+/* 🎀 LAZO */
+.bow{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90px;
+  height:50px;
+}
+.bow::before,
+.bow::after{
+  content:"";
+  position:absolute;
+  width:45px;
+  height:30px;
+  background:#b266ff;
+  border-radius:50%;
+}
+.bow::before{left:0;}
+.bow::after{right:0;}
+.bow span{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:#7a1fa2;
+  border-radius:50%;
+  left:35px;
+  top:15px;
+}
+
+/* 📐 POSICIÓN DE LAS FLORES */
+.bouquet .flower:nth-child(1){left:40px;transform:rotate(-30deg) scale(.9);}
+.bouquet .flower:nth-child(2){left:80px;transform:rotate(-15deg) scale(1);}
+.bouquet .flower:nth-child(3){left:130px;transform:rotate(0deg) scale(1.15);}
+.bouquet .flower:nth-child(4){left:180px;transform:rotate(10deg) scale(1);}
+.bouquet .flower:nth-child(5){left:220px;transform:rotate(25deg) scale(.95);}
+.bouquet .flower:nth-child(6){left:160px;bottom:-10px;transform:rotate(5deg) scale(.85);}
+.bouquet .flower:nth-child(7){left:100px;bottom:-15px;transform:rotate(-5deg) scale(.85);}
+
+/* 🌸 ANIMACIONES */
+@keyframes bloom{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+}
+@keyframes fadeOut{
+  to{opacity:0;visibility:hidden;}
+}
+
+/* =================== TU PÁGINA =================== */
+body{
+  background:url('h1.jpg') no-repeat center 30% / cover fixed;
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  margin:0;
+  padding:40px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* 🔹 TEXTOS BLANCOS CON SOMBRA ROJA Y FONDO AMARILLO */
+.main-title, .subtitle, .bottom-message{
+  background: #C8A2C8;  /* amarillo opaco */
+  padding: 8px 16px;
+  border-radius: 12px;
+  display:inline-block;
+}
+
+/* 🔹 COLOR Y SOMBRA */
+.main-title{
+  font-family:'Great Vibes',cursive;
+  font-size:3rem;
+  color:#ffffff;
+  text-shadow:3px 3px 8px #c00000;
+}
+
+.subtitle{
+  font-family:'Great Vibes',cursive;
+  font-size:2rem;
+  margin-bottom:40px;
+  color:#ffffff;
+  text-shadow:2px 2px 6px #c00000;
+}
+
+.bottom-message{
+  font-family:'Great Vibes',cursive;
+  font-size:1.8rem;
+  color:#ffffff;
+  text-shadow:2px 2px 6px #FF0000;
+  margin-top:30px;
+  text-align:center;
+}
+
+/* CARRUSEL */
+.carousel-container{
+  width:800px;
+  height:800px;
+  position:relative;
+}
+
+.carousel-item{
+  width:600px;
+  height:700px;
+  background:#fffaf6;
+  color:#000;
+  border-radius:12px;
+  border:4px solid #7a1fa2;
+  padding:20px;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition: opacity 1s ease;
+}
+.carousel-item.active{
+  display:flex;
+  opacity:1;
+}
+
+.frame{
+  width:86%;
+  height:58%;
+  overflow:hidden;
+}
+.frame img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.message{
+  font-family:'Great Vibes',cursive;
+  font-size:26px;
+  color:#6a0dad;
+  text-align:center;
+}
+
+.nav-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:50%;
+  background:#e6b3ff;
+  font-size:22px;
+  cursor:pointer;
+}
+.nav-btn.left{left:5%;}
+.nav-btn.right{right:5%;}
+
+/* 📱 RESPONSIVE */
+@media(max-width:600px){
+  .bouquet{transform:scale(.8);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 💐 RAMO -->
+<div id="flowerIntro">
+  <h1>Para Usted Mi Princesa 💜</h1>
+  <div class="bouquet">
+    <div class="flower purple"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower lilac"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower pink"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower purple"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower white"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower magenta"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="flower violet"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</div>
+
+<h1 class="main-title">Feliz San Valentín 💜</h1>
+<h5 class="subtitle">Con todo mi amor</h5>
+
+<!-- CARRUSEL CON FOTOS -->
+<div class="carousel-container">
+  <div class="carousel-item active">
+    <div class="frame"><img src="1p.jpeg"></div>
+    <div class="message">Es la flor más hermosa del universo 💜</div>
+  </div>
+  <div class="carousel-item">
+    <div class="frame"><img src="2p.jpeg"></div>
+    <div class="message">A su lado todo florece 🌸</div>
+  </div>
+  <div class="carousel-item">
+    <div class="frame"><img src="3p.jpeg"></div>
+    <div class="message">Gracias por quererme siempre ✨</div>
+  </div>
+  <div class="carousel-item">
+    <div class="frame"><img src="4p.jpeg"></div>
+    <div class="message">La quiero y la amo más de lo que se imagine 💕</div>
+  </div>
+  <div class="carousel-item">
+    <div class="frame"><img src="5p.jpeg"></div>
+    <div class="message">Siempre juntos 💖</div>
+  </div>
+
+  <button class="nav-btn left" onclick="prev()">◀</button>
+  <button class="nav-btn right" onclick="next()">▶</button>
+</div>
+
+<div class="bottom-message">
+  Es mi San Valentín, hoy, mañana y siempre
+</div>
+
+<script>
+let current=0;
+const items=document.querySelectorAll(".carousel-item");
+
+function update(){
+  items.forEach((el,i)=>{
+    if(i===current){
+      el.classList.add("active");
+    }else{
+      el.classList.remove("active");
+    }
+  });
+}
+function prev(){
+  current=(current-1+items.length)%items.length;
+  update();
+}
+function next(){
+  current=(current+1)%items.length;
+  update();
+}
+</script>
+
+</body>
+</html>
